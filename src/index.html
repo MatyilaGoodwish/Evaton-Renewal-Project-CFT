@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="housing,subcidy,land" />
+    <meta name="description" content="Housing List Database | CFT Sebokeng" />
+    <title>CFT HOUSING DATABASE - DEMO VERSION ONLY NOT FOR RESALE, BUY LICENSE FOR FULLY FUNCTIONAL SYSTEM</title>
+    <link rel="shortcut icon" type="image/*" href="img/logo.png" />
+    <meta name="robots" content="follow" />
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <script src="app/app.js"></script>
+
+    <script src="vendor/swal.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBcY86zhtxk58neT-6jq4yPQkVI-rehHRQ",
+    authDomain: "cftzaorg.firebaseapp.com",
+    databaseURL: "https://cftzaorg.firebaseio.com",
+    projectId: "cftzaorg",
+    storageBucket: "cftzaorg.appspot.com",
+    messagingSenderId: "1006717352105",
+    appId: "1:1006717352105:web:ec874b4673de73ce"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+    
+</head>
+
+<body class="bg-dark shadow-sm rounded text-left mr-auto">
+    <div ng-view></div>
+</body>
+ 
+</html>

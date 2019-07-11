@@ -1,0 +1,159 @@
+<div class="container my-4">
+    <div class=" ">
+        <div class="col">
+            <h3 class="display-4 font-weight-normal text-muted border-bottom">
+                {{welcomeModel.title}}</h3>
+            <p class="lead mb-1 text-capitalize text-muted">
+                Find local resident using Identity/Name/Area number
+            </p>
+            <small>Usage: <abbr title="Search existing members in the CFT Database" class="attr">Find/Existing</abbr>
+                community members in the database by searching in the context box below</small>
+            
+            <div class="container-fluid row bg-light p-4 rounded">
+                <div class="col p-3">Search In <abbr
+                        title="This will populate the records searched use community member Identity number to directly find individual">Records</abbr>
+                </div>
+                <div class="col-md-8">
+                    <form>
+                        <input type="number" id="communityId" class="text-center align-center form-control w-50"
+                            placeholder="ID number Search..." ng-required ng-model="welcomeModel.guests.id" />
+                        <button type="reset" class="btn btn-danger btn-sm my-1"> Reset </button>
+                    </form>
+                </div>
+                <div class="col">
+                    <button class="btn text-white p-2"
+                        style="background:linear-gradient(34deg,green,black) no-repeat fixed" ng-click="nav.remove()">CAPTURE NEW</button>
+
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <ul style="list-style-type: none">
+                    <li class="w-100" ng-repeat="guest in welcomeModel.guests | filter: welcomeModel.guests.id">
+                        <table class="w-100 text-muted   table rounded">
+
+                            <thead class="font-weight-bold">
+                                <td>
+                                    RSA ID NUMBER
+                                </td>
+                                <td>
+                                    TITLE
+                                </td>
+                                <td>
+                                    FULLNAMES
+                                </td>
+                                <td>
+                                    SURNAME
+                                </td>
+                                <td>
+                                    PHONE
+                                </td>
+                                <td>
+                                    <div class="text-capitalize ml-auto text-right">
+                                        <button ng-click="nav.remove()"
+                                            class="btn btn-danger border-rounded font-weight-bold btn-sm">Remove</button>
+
+                                    </div>
+
+                                </td>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="text-white bg-dark p-2 border-bottom font-weight-bold">
+                                            {{guest.id}}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="text-capitalize">
+                                            {{guest.title}}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="text-capitalize">
+                                            {{guest.fullNames}}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="text-capitalize">
+                                            {{guest.surname}}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="text-capitalize">
+                                            {{guest.phone}}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="text-capitalize ml-auto text-right">
+                                            <button class="btn btn-success btn-sm font-weight-bold"
+                                                ng-click="show = true">View
+                                                Details</button>
+                                            <button class="btn btn-warning font-weight-bold border-rounded btn-sm"
+                                                ng-click="show = false">Close</button>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div id="{{guest.id}}" ng-if="show === true">
+
+                            <div class="display-5 lead p-1 font-weight-bold text-success border-bottom">NEW APPLICATION:
+                                {{guest.status}} </div>
+                            <table class="table table-fluid bg-light text-dark">
+                                <thead class="font-weight-bold">
+                                    <td>
+                                        NATIONALITY
+                                    </td>
+                                    <td>
+                                        RACE
+                                    </td>
+                                    <td>
+                                        STR. ADDRESS
+                                    </td>
+                                    <td>
+                                        CITY
+                                    </td>
+                                    <td>
+                                        PROVINCE
+                                    </td>
+                                    <td>
+                                        DISABILITY
+                                    </td>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            {{guest.nationality}}
+                                        </td>
+                                        <td>
+                                            {{guest.race}}
+                                        </td>
+                                        <td>
+                                            {{guest.street_address}}
+                                        </td>
+                                        <td>
+                                            {{guest.city}}
+                                        </td>
+                                        <td>
+                                            {{guest.province}}
+                                        </td>
+                                        <td>
+                                            {{guest.disability}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="border-bottom my-4">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

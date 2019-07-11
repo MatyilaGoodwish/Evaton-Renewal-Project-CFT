@@ -1,0 +1,1 @@
+var general = angular.module("general", []);
